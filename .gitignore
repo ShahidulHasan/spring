@@ -1,0 +1,16 @@
+### Maven template
+target/
+
+### Log file
+log/
+
+spring.iml
+
+### Config file
+src/main/resources/application.properties
+
+### IDEA config
+.idea
+
+### uploads folder
+src/main/webapp/uploads/
