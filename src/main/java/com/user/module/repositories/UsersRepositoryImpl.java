@@ -35,4 +35,11 @@ public class UsersRepositoryImpl implements UsersRepository
         session.close();
         return users;
     }
+
+//    @Override
+//    public Users user(String username) {
+//        Session session = sessionFactory.openSession();
+//        Users users = (Users) session.load(Users.class, username);
+//        return users;
+//    }
 }

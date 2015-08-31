@@ -7,6 +7,6 @@ import java.util.List;
 public interface UsersRepository
 {
     public Users save(Users users);
-
     public List<Users> list();
+//    public Users user(String username);
 }

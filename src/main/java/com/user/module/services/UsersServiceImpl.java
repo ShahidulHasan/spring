@@ -23,4 +23,8 @@ public class UsersServiceImpl implements UsersService {
 		return usersRepository.list();
 	}
 
+//	@Override
+//	public Users user(String username) {
+//		return usersRepository.user(username);
+//	}
 }

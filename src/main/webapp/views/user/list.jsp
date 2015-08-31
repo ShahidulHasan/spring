@@ -16,11 +16,13 @@
 				<tr style="background-color: teal; color: white; text-align: center;" height="40px">
 					<td>username</td>
 					<td>password</td>
+					<td>action</td>
 				</tr>
 				<c:forEach items="${users}" var="user">
 					<tr style="background-color: white; color: black; text-align: center;" height="30px">
 						<td><c:out value="${user.username}" /></td>
 						<td><c:out value="${user.password}" /></td>
+						<%--<td><a href="user-edit?id=${user.username}">Edit</a></td>--%>
 					</tr>
 				</c:forEach>
 			</table>
