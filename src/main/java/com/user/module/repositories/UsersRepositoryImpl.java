@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository("UsersRepository")
 public class UsersRepositoryImpl implements UsersRepository
@@ -22,6 +23,15 @@ public class UsersRepositoryImpl implements UsersRepository
         Transaction tx = session.beginTransaction();
         session.save(users);
         tx.commit();
+        session.close();
+        return users;
+    }
+
+    @Override
+    public List<Users> list() {
+        Session session = sessionFactory.openSession();
+        @SuppressWarnings("unchecked")
+        List<Users> users = session.createQuery("from Users").list();
         session.close();
         return users;
     }

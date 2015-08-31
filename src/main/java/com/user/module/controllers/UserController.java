@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class UserController {
 
@@ -22,6 +24,12 @@ public class UserController {
     @RequestMapping("user-save")
     public ModelAndView userSave(@ModelAttribute Users users) {
         usersService.save(users);
-        return new ModelAndView("redirect:list");
+        return new ModelAndView("redirect:user-list");
+    }
+
+    @RequestMapping("user-list")
+    public ModelAndView getList() {
+        List users = usersService.list();
+        return new ModelAndView("user/list","users",users);
     }
 }
